@@ -31,3 +31,4 @@ jobs:
           personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+
