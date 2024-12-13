@@ -31,4 +31,4 @@ jobs:
           git config --global user.email 'Daniyar_Irkagaliev@mail.ru'
           git add .
           git commit -m "Deploying to GitHub Pages"
-          git push origin main
+          git push origin master
