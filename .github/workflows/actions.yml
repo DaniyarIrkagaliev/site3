@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Python Setup
         uses: actions/setup-python@v4
@@ -25,10 +25,12 @@ jobs:
       - name: Build
         run: mkdocs build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
         with:
-          personal_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+          publish_branch: gh-pages 
 
